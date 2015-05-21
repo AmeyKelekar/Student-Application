@@ -20,7 +20,7 @@ namespace StudentApplication
             InitializeComponent();
             dataGridView2.Visible = false;
             dataGridView1.Visible = false;
-            label1.Text = "Please click View Overall Grade button to view details";
+            label1.Text = "Please click View Overall grade button to view details";
         }
         IStudentApplication s = new Student();
         IIterator studentIterator;
@@ -28,21 +28,17 @@ namespace StudentApplication
         {
             studentIterator = s.CreateIterator();            
             Printstudents(studentIterator);
-
         }
 
         public void Printstudents(IIterator iterate)
         {
-            label1.Text = "Please click on individual rows or cells to view assignment details";
+            label1.Text = "Please click on View button to view assignment details";
             DataTable dt = new DataTable();
             DataColumn name = new DataColumn("Student Name");
             DataColumn grades = new DataColumn("GPA");
-           
             dt.Columns.Add(name);
             dt.Columns.Add(grades);
-
             while(!iterate.IsDone()){
-
                 StudentObject data =  iterate.Next();
                 DataRow rw = dt.NewRow();
                 rw["Student Name"] = data.name;
@@ -51,6 +47,14 @@ namespace StudentApplication
                 
             }
             dataGridView1.DataSource = dt;
+            if (dataGridView1.ColumnCount < 3)
+            {
+                DataGridViewButtonColumn viewAssignments = new DataGridViewButtonColumn();
+                viewAssignments.UseColumnTextForButtonValue = true;
+                viewAssignments.Text = "View";
+                viewAssignments.Name = "View Assignments";
+                dataGridView1.Columns.Add(viewAssignments);
+            }
             if (dt.Rows.Count > 0)
                 dataGridView1.Visible = true;
             else
@@ -70,8 +74,7 @@ namespace StudentApplication
             dt.Columns.Add(grade);
            
             while (!iterate.IsDone())
-            {
-                
+            {    
                 StudentObject data = iterate.Next();
                
                 label2.Text = student;
@@ -93,15 +96,14 @@ namespace StudentApplication
                 dataGridView2.Visible = true;
             else
                 label1.Text = "No records found for student";
-           
-
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1)
+            if (e.RowIndex != -1 && e.ColumnIndex == 0)
             {
-                label1.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                label3.Text = (e.RowIndex+1).ToString();
+                label1.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 studentIterator = s.CreateIterator();
                 printAssignment(label1.Text, studentIterator);
             }
