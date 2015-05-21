@@ -1,0 +1,9 @@
+c:\users\amey\documents\visual studio 2013\Projects\StudentApplication\StudentApplication\bin\Debug\StudentApplication.exe.config
+c:\users\amey\documents\visual studio 2013\Projects\StudentApplication\StudentApplication\obj\Debug\StudentApplication.csprojResolveAssemblyReference.cache
+c:\users\amey\documents\visual studio 2013\Projects\StudentApplication\StudentApplication\obj\Debug\StudentApplication.Form1.resources
+c:\users\amey\documents\visual studio 2013\Projects\StudentApplication\StudentApplication\obj\Debug\StudentApplication.Properties.Resources.resources
+c:\users\amey\documents\visual studio 2013\Projects\StudentApplication\StudentApplication\obj\Debug\StudentApplication.csproj.GenerateResource.Cache
+c:\users\amey\documents\visual studio 2013\Projects\StudentApplication\StudentApplication\bin\Debug\StudentApplication.exe
+c:\users\amey\documents\visual studio 2013\Projects\StudentApplication\StudentApplication\bin\Debug\StudentApplication.pdb
+c:\users\amey\documents\visual studio 2013\Projects\StudentApplication\StudentApplication\obj\Debug\StudentApplication.exe
+c:\users\amey\documents\visual studio 2013\Projects\StudentApplication\StudentApplication\obj\Debug\StudentApplication.pdb
