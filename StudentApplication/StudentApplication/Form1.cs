@@ -102,10 +102,9 @@ namespace StudentApplication
         {
             if (e.RowIndex != -1 && e.ColumnIndex == 0)
             {
-                label3.Text = (e.RowIndex+1).ToString();
-                label1.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                label3.Text = "Student Name: ";
                 studentIterator = s.CreateIterator();
-                printAssignment(label1.Text, studentIterator);
+                printAssignment(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString(), studentIterator);
             }
         }
     }
